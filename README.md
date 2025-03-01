@@ -65,12 +65,3 @@ Clicking the "Suspend" button for active jobs should suspend them. The GUI shoul
 Repeating the "Search" action with no input should consistently produce the same error message as in Test Case 3.  
 <img width="539" alt="SeaPort_Case5" src="https://github.com/user-attachments/assets/2b9f1716-c94a-4dcd-bc6e-c61efcc1d914" />
 
-## Troubleshooting Tips
-
-- **Null Checks:** If a dock does not have a ship, ensure that your code (especially in the `startAllJobs()` method in SeaPortProgram) properly checks for `null` before calling methods on the ship.
-- **Input File Format:** Verify that your input file is correctly formatted. A missing or extra token can cause the simulation to initialize incorrectly.
-- **Threading Issues:** Ensure that all GUI-related code runs on the Event Dispatch Thread (EDT) by using `SwingUtilities.invokeLater` in your main method if necessary.
-- **Sorting Behavior:** The `compareTo` method in Thing is nonstandard. While it won’t cause compile errors, it may lead to unpredictable sorting behavior.
-
-By following the guidelines above and reviewing the test case screenshots, you should be able to diagnose and resolve the issues preventing the program from running as expected.
-
